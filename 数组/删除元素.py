@@ -1,8 +1,12 @@
 def removeElement(nums, val):
-    for i in nums:
-        if i  == val:
-            nums.remove(val)
-    return len(nums)
+    slow = 0
+    fast = 0
+    while fast < len(nums):
+        if nums[fast] != val:
+            nums[slow] = nums[fast]
+            slow +=1
+        fast +=1
+    return slow
 a=[3,2,2,3]
 
 print(removeElement(a,3))
