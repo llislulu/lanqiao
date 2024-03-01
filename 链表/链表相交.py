@@ -9,18 +9,18 @@ class Solution:
         lenA, lenB = 0, 0
         cur = headA
         while cur:
-            cur =cur.next
+            cur = cur.next
             lenA += 1
         cur = headB
         while cur:
-            cur =cur.next
+            cur = cur.next
             lenB += 1
         cur_A = headA
         cur_B = headB
         if lenA > lenB:
             cur_A, cur_B = cur_B, cur_A
             lenA, lenB = lenB, lenA
-        for _ in range(lenB-lenA):
+        for _ in range(lenB - lenA):
             cur_B = cur_B.next
         while cur_A:
             if cur_A == cur_B:
@@ -29,6 +29,7 @@ class Solution:
                 cur_A = cur_A.next
                 cur_B = cur_B.next
         return None
+
 
 def input_ListNone(arr: []):
     if not arr:
@@ -47,6 +48,3 @@ def print_ListNone(head):
         print(current.val, end='->')
         current = current.next
     print('None')
-
-
-
