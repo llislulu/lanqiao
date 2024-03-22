@@ -1,9 +1,8 @@
 import collections
-from typing import Optional
 
 
 class Node:
-    def __init__(self, val=0, left=None, right=None, next=None):
+    def __init__(self, val: int = 0, left: 'Node' = None, right: 'Node' = None, next: 'Node' = None):
         self.val = val
         self.left = left
         self.right = right
@@ -11,7 +10,7 @@ class Node:
 
 
 class Solution:
-    def connect(self, root: Optional[Node]) -> Optional[Node]:
+    def connect(self, root: 'Node') -> 'Node':
         if not root:
             return root
         queue = collections.deque([root])
@@ -27,18 +26,3 @@ class Solution:
                 if cur.right:
                     queue.append(cur.right)
         return root
-
-
-# 构造一个二叉树
-#     1
-#    / \
-#   2   3
-#  / \
-# 4   5
-root = Node(1)
-root.left = Node(2)
-root.right = Node(3)
-root.left.left = Node(4)
-root.left.right = Node(5)
-solution = Solution()
-print(solution.connect(root))
